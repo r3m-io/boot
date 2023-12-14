@@ -5,7 +5,7 @@
 {{if(!is.empty($packages))}}
 {{for.each($packages as $nr => $package)}}
 {{$options = [
-    'where' => 'name === ' + $package
+    'where' => 'name === "' + $package  + '"'
 ]}}
 {{$response = R3m.Io.Node:Data:record(
 $installation,
