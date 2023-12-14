@@ -1,11 +1,15 @@
 {{R3M}}
 ### Setup
-{{$class = 'System.Installation'}}
+{{$installation = 'System.Installation'}}
+
+{{$packages = data.read(config('project.dir.vendor') + 'r3m_io/boot/Data/Packages.json' )}}
+{{dd($packages)}}
+
 {{$options = [
     'where' => 'name === r3m_io/node'
 ]}}
 {{$response = R3m.Io.Node:Data:record(
-$class,
+$installation,
 R3m.Io.Node:Role:role_system(),
 $options
 )}}
