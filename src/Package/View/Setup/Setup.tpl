@@ -1,3 +1,4 @@
+{{R3M}}
 ### Setup
 {{$class = 'System.Installation'}}
 {{$options = [
