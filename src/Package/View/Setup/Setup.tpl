@@ -2,9 +2,11 @@
 ### Setup
 {{$installation = 'System.Installation'}}
 
-{{$read = data.read(config('project.dir.vendor') + 'r3m_io/boot/Data/Package.json' )}}
-{{d($read)}}
-{{dd($Package)}}
+{{$packages = array.read(config('project.dir.vendor') + 'r3m_io/boot/Data/Package.json' )}}
+{{if(!is.empty($packages))}}
+
+{/if}
+{{dd($packages)}}
 
 {{$options = [
     'where' => 'name === r3m_io/node'
