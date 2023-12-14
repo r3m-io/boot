@@ -18,8 +18,10 @@ $options
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
 
+/*
 {{$output = execute($command)}}
 {{$output}}
+*/
 
 {{else}}
 - Skipping {{$package}} installation
