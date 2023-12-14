@@ -17,8 +17,7 @@ $options
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
 
-{{$output = execute($command)}}
-{{$output}}
+{{execute.background($command)}}
 
 {{else}}
 - Skipping {{$package}} installation
