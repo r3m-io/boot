@@ -16,10 +16,12 @@ $options
 {{if(is.empty($response))}}
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
-
-{{execute($command)}}
 - Installing {{$package}}
-
+{{$output = execute($command , 'notification')}}
+{{$output}}
+{{if(!is.empty($notification)}}
+- {{$notification}}
+{{/if}}
 {{else}}
 - Skipping {{$package}} installation
 
