@@ -12,16 +12,12 @@ $installation,
 R3m.Io.Node:Role:role_system(),
 $options
 )}}
-{{$nr}} {{$package}}
-
 {{if(is.empty($response))}}
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
 
-/*
 {{$output = execute($command)}}
 {{$output}}
-*/
 
 {{else}}
 - Skipping {{$package}} installation
