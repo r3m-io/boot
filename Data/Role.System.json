@@ -1,0 +1,147 @@
+{
+  "name" : "ROLE_SYSTEM",
+  "rank" : 1,
+  "#class": "Account.Role",
+  "permission": [
+    {
+      "name": "System:Route:record",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:record.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:create",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:count",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:count.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:read",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:read.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:put",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:patch",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:page",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:page.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:list",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:list.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:rename",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:record",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:record.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:create",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:count",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:count.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:read",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:read.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:put",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:patch",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:page",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:page.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:list",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:list.relation",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:rename",
+      "attribute": [],
+      "#class": "Account.Permission"
+    }
+  ]
+}

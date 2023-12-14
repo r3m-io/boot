@@ -24,6 +24,7 @@ class Cli extends Controller {
     const INFO = [
         '{{binary()}} r3m_io/installation            | installation options',
         '{{binary()}} r3m_io/installation setup      | installation setup',
+        '{{binary()}} r3m_io/installation update     | installation update',
     ];
 
     /**
