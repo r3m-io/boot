@@ -19,7 +19,7 @@ $options
 - Installing {{$package}}
 {{$output = execute($command , 'notification')}}
 {{$output}}
-{{if(!is.empty($notification)}}
+{{if(!is.empty($notification))}}
 - {{$notification}}
 {{/if}}
 {{else}}
