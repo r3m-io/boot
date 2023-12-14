@@ -15,6 +15,7 @@ $options
 {{if(is.empty($response))}}
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
+
 - Installing {{$package}} ...
 {{$output = execute($command , 'notification')}}
 {{implode("\n", $output)}}
