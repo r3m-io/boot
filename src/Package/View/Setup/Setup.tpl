@@ -16,11 +16,9 @@ $options
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
 
-- Installing {{$package}}
+- Installing {{$package}} ...
 
 {{$output = execute($command , 'notification')}}
-{{d($output)}}
-{{d($notification)}}
 {{implode("\n", $output)}}
 
 {{if(!is.empty($notification))}}
