@@ -1,0 +1,15 @@
+{
+    "name" : "r3m_io/output_filter",
+    "description" : "r3m_io/output.filter see https://r3m.io for detailed usage",
+    "type" : "library",
+    "keywords" : ["node", "r3m", "library", "framework", "output", "filter", "r3m.io"],
+    "homepage": "https://r3m.io",
+    "require" : {
+        "r3m_io/framework": "*"
+    },
+    "license" : "MIT",
+    "authors" : [{
+        "name" : "Remco van der Velde",
+        "email" : "development@universeorange.com"
+    }]
+}
