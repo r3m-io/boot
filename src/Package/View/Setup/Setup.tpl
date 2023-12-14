@@ -8,8 +8,9 @@ $class,
 R3m.Io.Node:Role:role_system(),
 $options
 )}}
-{{$response|json.encode:'JSON_PRETTY_PRINT'}}
-
-
-- record system.Installation where -name=r3m_io/node
-- found then skip or add force
+{{if(empty($response))}}
+{{$output = execute(binary() + ' install r3m_io/node')}}
+{{$output}}
+{{else}}
+- Skipping r3m_io/node installation
+{{/if}}
