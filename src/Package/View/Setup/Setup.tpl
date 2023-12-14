@@ -18,6 +18,7 @@ $options
 {{$command}}
 
 {{execute.background($command)}}
+- Installing {{$package}}
 
 {{else}}
 - Skipping {{$package}} installation
