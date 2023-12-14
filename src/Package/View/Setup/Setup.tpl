@@ -18,8 +18,10 @@ $options
 - Installing {{$package}} ...
 {{$output = execute($command , 'notification')}}
 {{implode("\n", $output)}}
+
 {{if(!is.empty($notification))}}
 - {{$notification}}
+
 {{/if}}
 {{else}}
 - Skipping {{$package}} installation
