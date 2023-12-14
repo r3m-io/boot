@@ -4,7 +4,7 @@
 
 {{$packages = array.read(config('project.dir.vendor') + 'r3m_io/boot/Data/Package.json' )}}
 {{if(!is.empty($packages))}}
-{{foreach($packages as $package)}}
+{{for.each($packages as $package)}}
 {{$options = [
     'where' => 'name === ' + $package.name
 ]}}
@@ -20,4 +20,5 @@ $options
 - Skipping {{$package}} installation
 
 {{/if}}
+{{/for.each}}
 {{/if}}
