@@ -17,7 +17,7 @@ $options
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
 
-{{execute.background($command)}}
+{{execute($command)}}
 - Installing {{$package}}
 
 {{else}}
