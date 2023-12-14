@@ -5,7 +5,7 @@
 {{if(!is.empty($packages))}}
 {{for.each($packages as $package)}}
 {{$options = [
-    'where' => 'name === ' + $package.name
+    'where' => 'name === ' + $package
 ]}}
 {{$response = R3m.Io.Node:Data:record(
 $installation,
@@ -15,8 +15,10 @@ $options
 {{if(is.empty($response))}}
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
+
 {{$output = execute($command)}}
 {{$output}}
+
 {{else}}
 - Skipping {{$package}} installation
 
