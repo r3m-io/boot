@@ -1,6 +1,6 @@
 <?php
 
-namespace Package\R3m\Io\Installation\Controller;
+namespace Package\R3m\Io\Boot\Controller;
 
 use R3m\Io\App;
 use R3m\Io\Config;
@@ -22,9 +22,9 @@ class Cli extends Controller {
     const DIR = __DIR__ . '/';
     const MODULE_INFO = 'Info';
     const INFO = [
-        '{{binary()}} r3m_io/installation            | installation options',
-        '{{binary()}} r3m_io/installation setup      | installation setup',
-        '{{binary()}} r3m_io/installation update     | installation update',
+        '{{binary()}} r3m_io/boot                    | boot options',
+        '{{binary()}} r3m_io/boot setup              | boot setup',
+        '{{binary()}} r3m_io/boot update             | boot update',
     ];
 
     /**
