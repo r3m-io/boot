@@ -12,7 +12,6 @@ $installation,
 R3m.Io.Node:Role:role_system(),
 $options
 )}}
-{{d($response)}}
 {{if(is.empty($response))}}
 {{$command = binary() + ' install ' + $package}}
 {{$command}}
@@ -20,6 +19,8 @@ $options
 - Installing {{$package}}
 
 {{$output = execute($command , 'notification')}}
+{{d($output)}}
+{{d($notification)}}
 {{implode("\n", $output)}}
 
 {{if(!is.empty($notification))}}
