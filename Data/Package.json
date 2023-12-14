@@ -1,4 +1,5 @@
 [
   "r3m_io/node",
-  "r3m_io/route"
+  "r3m_io/route",
+  "r3m_io/event"
 ]
