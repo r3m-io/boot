@@ -8,7 +8,7 @@ $class,
 R3m.Io.Node:Role:role_system(),
 $options
 )}}
-{{if(empty($response))}}
+{{if(is.empty($response))}}
 {{$output = execute(binary() + ' install r3m_io/node')}}
 {{$output}}
 {{else}}
