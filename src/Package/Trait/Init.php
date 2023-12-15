@@ -21,7 +21,7 @@ trait Init {
                 ];
                 $response = $node->record(
                     'System.Installation',
-                    $object->role_system(),
+                    $node->role_system(),
                     $options
                 );
                 if(!$response){
