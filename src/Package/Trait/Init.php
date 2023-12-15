@@ -2,15 +2,16 @@
 namespace Package\R3m\Io\Boot\Trait;
 
 use R3m\Io\Module\Core;
+use R3m\Io\Module\File;
 trait Init {
 
     public function installation (){
         $object = $this->object();
         $url_package = $object->config('project.dir.vendor') . 'r3m_io/boot/Data/Package.json';
+        $class = File::basename($url_package, $object->config('extension.json'));
         $packages = $object->data_read($url_package);
-        ddd($packages);
         if($packages){
-            foreach($packages as $nr => $package){
+            foreach($packages->data('Package') as $nr => $package){
                 $options = [
                     'where' => 'name === "' . $package  . '"'
                 ];
