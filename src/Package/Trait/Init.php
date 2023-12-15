@@ -17,7 +17,7 @@ trait Init {
         if($packages){
             foreach($packages->data($class) as $nr => $package){
                 $options = [
-                    'filter' => [
+                    'where' => [
                         'value' => $package,
                         'attribute' => 'name',
                         'operator' => '===',
