@@ -17,10 +17,11 @@ $options
 {{$command}}
 
 - Installing {{$package}} ...
+/*
 {{$output = execute($command)}}
 {{if(is.array($output))}}
 {{implode("\n", $output)}}
-
+*/
 {{/if}}
 {{else}}
 - Skipping {{$package}} installation
