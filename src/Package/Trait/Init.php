@@ -30,8 +30,6 @@ trait Init {
                     $node->role_system(),
                     $options
                 );
-                d($package);
-                d($response);
                 if(!$response){
                     $command = Core::binary($object) . ' install ' . $package;
                     Core::execute($object, $command);
