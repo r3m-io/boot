@@ -7,8 +7,8 @@ use R3m\Io\Module\File;
 use R3m\Io\Node\Model\Node;
 trait Init {
 
-
-    public function installation (){
+    public function installation (): void
+    {
         $object = $this->object();
         $url_package = $object->config('project.dir.vendor') . 'r3m_io/boot/Data/Package.json';
         $class = File::basename($url_package, $object->config('extension.json'));
@@ -33,35 +33,4 @@ trait Init {
             }
         }
     }
-
-    /*
-{{$installation = 'System.Installation'}}
-{{$packages = array.read(config('project.dir.vendor') + 'r3m_io/boot/Data/Package.json' )}}
-{{if(!is.empty($packages))}}
-{{for.each($packages as $nr => $package)}}
-{{$options = [
-    'where' => 'name === "' + $package  + '"'
-]}}
-{{$response = R3m.Io.Node:Data:record(
-$installation,
-R3m.Io.Node:Role:role.system(),
-$options
-)}}
-{{if(is.empty($response))}}
-{{$command = binary() + ' install ' + $package}}
-{{$command}}
-
-- Installing {{$package}} ...
-
-{{$output = execute($command)}}
-{{if(is.array($output))}}
-{{implode("\n", $output)}}
-{{/if}}
-
-{{else}}
-- Skipping {{$package}} installation
-{{/if}}
-{{/for.each}}
-{{/if}}
-*/
 }
