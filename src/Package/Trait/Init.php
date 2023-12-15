@@ -56,7 +56,7 @@ trait Init {
                     }
                     Core::execute($object, $command);
                 }
-                if(!$response){
+                elseif(!$response){
                     $command = Core::binary($object) . ' install ' . $package;
                     if(!empty($command_options)){
                         $command = $command . ' ' . implode(' ', $command_options);
