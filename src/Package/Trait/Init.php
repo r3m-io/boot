@@ -27,6 +27,8 @@ trait Init {
                 if(!$response){
                     $command = Core::binary($object) . ' install ' . $package;
                     Core::execute($object, $command);
+                } else {
+                    echo 'Skipping ' . $package . ' installation...' . PHP_EOL;
                 }
             }
         }
