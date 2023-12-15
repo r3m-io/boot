@@ -1,5 +1,5 @@
 <?php
-namespace Package\R3m\Io\Boot;
+namespace Package\R3m\Io\Boot\Trait;
 
 trait Init {
 
