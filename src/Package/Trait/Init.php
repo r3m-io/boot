@@ -17,7 +17,11 @@ trait Init {
         if($packages){
             foreach($packages->data($class) as $nr => $package){
                 $options = [
-                    'where' => 'name === "' . $package  . '"'
+                    'where' => [
+                        'value' => $package,
+                        'attribute' => 'name',
+                        'operator' => '===',
+                    ]
                 ];
                 $response = $node->record(
                     'System.Installation',
