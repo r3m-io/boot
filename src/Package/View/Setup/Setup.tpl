@@ -21,14 +21,9 @@ $options
 {{$command}}
 
 - Installing {{$package}} ...
-{{$output = execute($command , 'notification')}}
+{{$output = execute($command)}}
 {{if(is.array($output))}}
 {{implode("\n", $output)}}
-
-{{/if}}
-{{d($package)}}
-{{if(!is.empty($notification))}}
-- {{$notification}}
 
 {{/if}}
 {{else}}
