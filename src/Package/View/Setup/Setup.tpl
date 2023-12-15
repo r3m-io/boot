@@ -1,5 +1,7 @@
 {{R3M}}
 ### Setup BootX2
+{{$response = R3m.Io.Boot:Data:record()}}
+/*
 {{$installation = 'System.Installation'}}
 {{$packages = array.read(config('project.dir.vendor') + 'r3m_io/boot/Data/Package.json' )}}
 {{if(!is.empty($packages))}}
@@ -17,14 +19,15 @@ $options
 {{$command}}
 
 - Installing {{$package}} ...
-/*
+
 {{$output = execute($command)}}
 {{if(is.array($output))}}
 {{implode("\n", $output)}}
 {{/if}}
-*/
+
 {{else}}
 - Skipping {{$package}} installation
 {{/if}}
 {{/for.each}}
 {{/if}}
+*/
