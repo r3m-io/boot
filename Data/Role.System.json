@@ -19,6 +19,11 @@
       "#class": "Account.Permission"
     },
     {
+      "name": "System:Route:create.many",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
       "name": "System:Route:count",
       "attribute": [],
       "#class": "Account.Permission"
@@ -85,6 +90,11 @@
     },
     {
       "name": "System:Installation:create",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:create.many",
       "attribute": [],
       "#class": "Account.Permission"
     },
