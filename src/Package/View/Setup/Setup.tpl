@@ -22,7 +22,7 @@ $options
 {{implode("\n", $output)}}
 
 {{/if}}
-
+{{d($package)}}
 {{if(!is.empty($notification))}}
 - {{$notification}}
 
