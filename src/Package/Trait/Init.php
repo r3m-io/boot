@@ -26,8 +26,7 @@ trait Init {
                 );
                 if(!$response){
                     $command = Core::binary($object) . ' install ' . $package;
-                    Core::execute($object, $command, $output);
-                    d($output);
+                    Core::execute($object, $command);
                 }
             }
         }
