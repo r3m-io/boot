@@ -35,13 +35,13 @@ trait Init {
                 $command_options = [];
                 foreach($options as $option => $value){
                     if($value === false){
-                        $command_options[] = '-' . $option .'=false';
+                        $command_options[] = '-' . $option . '=false';
                     }
                     elseif($value === true){
-                        $command_options[] = '-' . $option .'=true';
+                        $command_options[] = '-' . $option . '=true';
                     }
                     elseif($value === null){
-                        $command_options[] = '-' . $option .'=null';
+                        $command_options[] = '-' . $option . '=null';
                     }
                     elseif(is_numeric($value)){
                         $command_options[] = '-' . $option . '=' . $value;
