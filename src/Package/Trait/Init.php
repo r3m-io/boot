@@ -17,10 +17,12 @@ trait Init {
         if($packages){
             foreach($packages->data($class) as $nr => $package){
                 $options = [
-                    'where' => [
-                        'value' => $package,
-                        'attribute' => 'name',
-                        'operator' => '===',
+                    [
+                        'where' => [
+                            'value' => $package,
+                            'attribute' => 'name',
+                            'operator' => '===',
+                        ]
                     ]
                 ];
                 $response = $node->record(
