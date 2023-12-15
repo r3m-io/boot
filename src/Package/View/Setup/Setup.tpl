@@ -1,5 +1,5 @@
 {{R3M}}
-### Setup
+### Setup BootX2
 {{$installation = 'System.Installation'}}
 {{$packages = array.read(config('project.dir.vendor') + 'r3m_io/boot/Data/Package.json' )}}
 {{if(!is.empty($packages))}}
