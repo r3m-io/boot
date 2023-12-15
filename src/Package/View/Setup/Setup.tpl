@@ -9,7 +9,7 @@
 ]}}
 {{$response = R3m.Io.Node:Data:record(
 $installation,
-R3m.Io.Node:Role:role_system(),
+R3m.Io.Node:Role:role.system(),
 $options
 )}}
 {{if(is.empty($response))}}
