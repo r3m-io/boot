@@ -8,6 +8,7 @@ trait Init {
         $object = $this->object();
         $url_package = $object->config('project.dir.vendor') . 'r3m_io/boot/Data/Package.json';
         $packages = $object->data_read($url_package);
+        ddd($packages);
         if($packages){
             foreach($packages as $nr => $package){
                 $options = [
