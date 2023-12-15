@@ -34,12 +34,16 @@ trait Init {
                 );
                 $command_options = [];
                 foreach($options as $option => $value){
-                    if(
-                        $value === true ||
-                        $value === false ||
-                        $value === null ||
-                        is_numeric($value)
-                    ){
+                    if($value === false){
+                        $command_options[] = '-' . $option .'=false';
+                    }
+                    elseif($value === true){
+                        $command_options[] = '-' . $option .'=true';
+                    }
+                    elseif($value === null){
+                        $command_options[] = '-' . $option .'=null';
+                    }
+                    elseif(is_numeric($value)){
                         $command_options[] = '-' . $option . '=' . $value;
                     } else {
                         $command_options[] = '-' . $option . '=\'' . $value . '\'';
