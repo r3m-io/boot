@@ -49,7 +49,17 @@
       "#class": "Account.Permission"
     },
     {
+      "name": "System:Route:put.many",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
       "name": "System:Route:patch",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:patch.many",
       "attribute": [],
       "#class": "Account.Permission"
     },
@@ -124,7 +134,17 @@
       "#class": "Account.Permission"
     },
     {
+      "name": "System:Route:put.many",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
       "name": "System:Installation:patch",
+      "attribute": [],
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:patch.many",
       "attribute": [],
       "#class": "Account.Permission"
     },
