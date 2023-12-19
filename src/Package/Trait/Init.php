@@ -25,7 +25,8 @@ trait Init {
                             'attribute' => 'name',
                             'operator' => '===',
                         ]
-                    ]
+                    ],
+                    'process' => true
                 ];
                 $response = $node->record(
                     'System.Installation',

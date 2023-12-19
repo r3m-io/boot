@@ -32,6 +32,10 @@
       "#class": "Account.Permission"
     },
     {
+      "name": "System:Route:commit",
+      "#class": "Account.Permission"
+    },
+    {
       "name": "System:Route:read",
       "#class": "Account.Permission"
     },
@@ -101,6 +105,10 @@
     },
     {
       "name": "System:Installation:count.relation",
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:commit",
       "#class": "Account.Permission"
     },
     {
