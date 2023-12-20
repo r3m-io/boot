@@ -53,6 +53,32 @@
                     }
                 ]
             },
+            "create_many": {
+                "expose": [
+                    {
+                        "role": "ROLE_SYSTEM",
+                        "property": [
+                            "uuid",
+                            "#class",
+                            "name",
+                            "host",
+                            "controller",
+                            "url",
+                            "redirect",
+                            "path",
+                            "priority",
+                            "method",
+                            "request"
+                        ],
+                        "object": {
+                            "request": {
+                                "multiple": false,
+                                "dynamic": true
+                            }
+                        }
+                    }
+                ]
+            },
             "list": {
                 "expose": [
                     {
@@ -131,7 +157,59 @@
                     }
                 ]
             },
+            "patch_many": {
+                "expose": [
+                    {
+                        "role": "ROLE_SYSTEM",
+                        "property": [
+                            "uuid",
+                            "#class",
+                            "name",
+                            "host",
+                            "controller",
+                            "url",
+                            "redirect",
+                            "path",
+                            "priority",
+                            "method",
+                            "request"
+                        ],
+                        "object": {
+                            "request": {
+                                "multiple": false,
+                                "dynamic": true
+                            }
+                        }
+                    }
+                ]
+            },
             "put": {
+                "expose": [
+                    {
+                        "role": "ROLE_SYSTEM",
+                        "property": [
+                            "uuid",
+                            "#class",
+                            "name",
+                            "host",
+                            "controller",
+                            "url",
+                            "redirect",
+                            "path",
+                            "priority",
+                            "method",
+                            "request"
+                        ],
+                        "object": {
+                            "request": {
+                                "multiple": false,
+                                "dynamic": true
+                            }
+                        }
+                    }
+                ]
+            },
+            "put_many": {
                 "expose": [
                     {
                         "role": "ROLE_SYSTEM",
