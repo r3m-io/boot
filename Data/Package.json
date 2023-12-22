@@ -4,6 +4,8 @@
     "r3m_io/route",
     "r3m_io/event",
     "r3m_io/config",
-    "r3m_io/autoload"
+    "r3m_io/autoload",
+    "r3m_io/server",
+    "r3m_io/log"
   ]
 }
