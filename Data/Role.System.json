@@ -36,6 +36,14 @@
       "#class": "Account.Permission"
     },
     {
+      "name": "System:Route:delete",
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:delete.many",
+      "#class": "Account.Permission"
+    },
+    {
       "name": "System:Route:read",
       "#class": "Account.Permission"
     },
@@ -109,6 +117,14 @@
     },
     {
       "name": "System:Installation:commit",
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:delete",
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Installation:delete.many",
       "#class": "Account.Permission"
     },
     {
@@ -190,6 +206,14 @@
     },
     {
       "name": "System:Event:commit",
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Event:delete",
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Event:delete.many",
       "#class": "Account.Permission"
     },
     {
