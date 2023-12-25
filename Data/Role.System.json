@@ -76,7 +76,7 @@
       "#class": "Account.Permission"
     },
     {
-      "name": "System:Route:property.remove",
+      "name": "System:Route:property.delete",
       "#class": "Account.Permission"
     },
     {
@@ -166,7 +166,7 @@
       "#class": "Account.Permission"
     },
     {
-      "name": "System:Installation:property.remove",
+      "name": "System:Installation:property.delete",
       "#class": "Account.Permission"
     },
     {
