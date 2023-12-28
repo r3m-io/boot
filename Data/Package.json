@@ -10,6 +10,6 @@
     "r3m_io/server",
     "r3m_io/log",
     "r3m_io/host",
-    "r3m_io/apache2"
+    "r3m_io/basic"
   ]
 }
