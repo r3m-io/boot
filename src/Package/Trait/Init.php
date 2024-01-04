@@ -19,6 +19,7 @@ trait Init {
      */
     public function installation (): void
     {
+        Core::interactive();
         $object = $this->object();
         $options = App::options($object);
         $url_package = $object->config('project.dir.vendor') . 'r3m_io/boot/Data/Package.json';
