@@ -2,12 +2,21 @@
 namespace Package\R3m\Io\Boot\Trait;
 
 use R3m\Io\App;
+
 use R3m\Io\Module\Core;
 use R3m\Io\Module\File;
 
 use R3m\Io\Node\Model\Node;
+
+use R3m\Io\Exception\FileWriteException;
+use R3m\Io\Exception\ObjectException;
+
 trait Init {
 
+    /**
+     * @throws ObjectException
+     * @throws FileWriteException
+     */
     public function installation (): void
     {
         $object = $this->object();
@@ -55,14 +64,26 @@ trait Init {
                     if(!empty($command_options)){
                         $command = $command . ' ' . implode(' ', $command_options);
                     }
-                    Core::execute($object, $command);
+                    Core::execute($object, $command, $output, $notification);
+                    if(!empty($output)){
+                        echo rtrim($output, PHP_EOL) . PHP_EOL;
+                    }
+                    if(!empty($notification)){
+                        echo rtrim($notification, PHP_EOL) . PHP_EOL;
+                    }
                 }
                 elseif(!$response){
                     $command = Core::binary($object) . ' install ' . $package;
                     if(!empty($command_options)){
                         $command = $command . ' ' . implode(' ', $command_options);
                     }
-                    Core::execute($object, $command);
+                    Core::execute($object, $command, $output, $notification);
+                    if(!empty($output)){
+                        echo rtrim($output, PHP_EOL) . PHP_EOL;
+                    }
+                    if(!empty($notification)){
+                        echo rtrim($notification, PHP_EOL) . PHP_EOL;
+                    }
                 } else {
                     echo 'Skipping ' . $package . ' installation...' . PHP_EOL;
                 }
