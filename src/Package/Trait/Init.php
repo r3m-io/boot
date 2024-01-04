@@ -91,6 +91,7 @@ trait Init {
                 } else {
                     echo 'Skipping ' . $package . ' installation...' . PHP_EOL;
                 }
+                Core::interactive();
             }
         }
     }
