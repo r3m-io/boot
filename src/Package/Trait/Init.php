@@ -8,6 +8,8 @@ use R3m\Io\Module\File;
 
 use R3m\Io\Node\Model\Node;
 
+use Exception;
+
 use R3m\Io\Exception\FileWriteException;
 use R3m\Io\Exception\ObjectException;
 
@@ -16,6 +18,7 @@ trait Init {
     /**
      * @throws ObjectException
      * @throws FileWriteException
+     * @throws Exception
      */
     public function installation (): void
     {
