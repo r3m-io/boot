@@ -30,6 +30,7 @@ trait Init {
         $class = File::basename($url_package, $object->config('extension.json'));
         $packages = $object->data_read($url_package);
         $node = new Node($object);
+        $is_install = false;
         if($packages){
             foreach($packages->data($class) as $nr => $package){
                 $record_options = [
@@ -84,6 +85,7 @@ trait Init {
                             'dir' => $object->config('project.dir.source'),
                         ]);
                     }
+                    $is_install = true;
                 }
                 elseif(!$response){
                     $command = Core::binary($object) . ' install ' . $package;
@@ -105,10 +107,15 @@ trait Init {
                             'dir' => $object->config('project.dir.source'),
                         ]);
                     }
+                    $is_install = true;
                 } else {
                     echo 'Skipping ' . $package . ' installation...' . PHP_EOL;
                 }
             }
+        }
+        if($is_install){
+            $environment = $object->config('framework.environment');
+            ddd($environment);
         }
     }
 }
