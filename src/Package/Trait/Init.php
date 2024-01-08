@@ -3,6 +3,7 @@ namespace Package\R3m\Io\Boot\Trait;
 
 use R3m\Io\App;
 
+use R3m\Io\Config;
 use R3m\Io\Module\Core;
 use R3m\Io\Module\Dir;
 use R3m\Io\Module\File;
@@ -77,14 +78,6 @@ trait Init {
                     if(!empty($notification)){
                         echo rtrim($notification, PHP_EOL) . PHP_EOL;
                     }
-                    if(
-                        Dir::is($object->config('project.dir.source')) &&
-                        str_contains($object->config('project.dir.source'), $object->config('project.dir.root'))
-                    ){
-                        File::permission($object, [
-                            'dir' => $object->config('project.dir.source'),
-                        ]);
-                    }
                     $is_install = true;
                 }
                 elseif(!$response){
@@ -99,14 +92,6 @@ trait Init {
                     if(!empty($notification)){
                         echo rtrim($notification, PHP_EOL) . PHP_EOL;
                     }
-                    if(
-                        Dir::is($object->config('project.dir.source')) &&
-                        str_contains($object->config('project.dir.source'), $object->config('project.dir.root'))
-                    ){
-                        File::permission($object, [
-                            'dir' => $object->config('project.dir.source'),
-                        ]);
-                    }
                     $is_install = true;
                 } else {
                     echo 'Skipping ' . $package . ' installation...' . PHP_EOL;
@@ -115,7 +100,28 @@ trait Init {
         }
         if($is_install){
             $environment = $object->config('framework.environment');
-            ddd($environment);
+            switch($environment){
+                case Config::MODE_DEVELOPMENT:
+                    $command = Core::binary($object) . ' r3m_io/config framework environment '. $environment . ' -enable-file-permission';
+                    Core::execute($object, $command, $output, $notification);
+                    if(!empty($output)){
+                        echo rtrim($output, PHP_EOL) . PHP_EOL;
+                    }
+                    if(!empty($notification)){
+                        echo rtrim($notification, PHP_EOL) . PHP_EOL;
+                    }
+                    break;
+                default:
+                    $command = Core::binary($object) . ' r3m_io/config framework environment '. $environment;
+                    Core::execute($object, $command, $output, $notification);
+                    if(!empty($output)){
+                        echo rtrim($output, PHP_EOL) . PHP_EOL;
+                    }
+                    if(!empty($notification)){
+                        echo rtrim($notification, PHP_EOL) . PHP_EOL;
+                    }
+                    break;
+            }
         }
     }
 }
