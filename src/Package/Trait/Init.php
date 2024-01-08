@@ -99,14 +99,15 @@ trait Init {
             }
         }
         if($is_install){
-//            Config::configure($object);
+            Config::configure($object);
             $environment = $object->config('framework.environment');
-            d($environment);
             if(empty($environment)) {
                 $environment = Config::MODE_DEVELOPMENT;
             }
             switch($environment){
+                case Config::MODE_INIT:
                 case Config::MODE_DEVELOPMENT:
+                    $environment = Config::MODE_DEVELOPMENT;
                     $command = Core::binary($object) . ' r3m_io/config framework environment '. $environment . ' -enable-file-permission';
                     Core::execute($object, $command, $output, $notification);
                     if(!empty($output)){
