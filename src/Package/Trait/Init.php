@@ -99,7 +99,7 @@ trait Init {
             }
         }
         if($is_install){
-            $object = App::instance(); //re-init config
+            Config::configure($object);
             $environment = $object->config('framework.environment');
             d($environment);
             if(empty($environment)) {
