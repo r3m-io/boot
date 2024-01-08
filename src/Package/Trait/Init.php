@@ -4,6 +4,7 @@ namespace Package\R3m\Io\Boot\Trait;
 use R3m\Io\App;
 
 use R3m\Io\Module\Core;
+use R3m\Io\Module\Dir;
 use R3m\Io\Module\File;
 
 use R3m\Io\Node\Model\Node;
@@ -75,6 +76,14 @@ trait Init {
                     if(!empty($notification)){
                         echo rtrim($notification, PHP_EOL) . PHP_EOL;
                     }
+                    if(
+                        Dir::is($object->config('project.dir.source')) &&
+                        str_contains($object->config('project.dir.source'), $object->config('project.dir.root'))
+                    ){
+                        File::permission($object, [
+                            'dir' => $object->config('project.dir.source'),
+                        ]);
+                    }
                 }
                 elseif(!$response){
                     $command = Core::binary($object) . ' install ' . $package;
@@ -87,6 +96,14 @@ trait Init {
                     }
                     if(!empty($notification)){
                         echo rtrim($notification, PHP_EOL) . PHP_EOL;
+                    }
+                    if(
+                        Dir::is($object->config('project.dir.source')) &&
+                        str_contains($object->config('project.dir.source'), $object->config('project.dir.root'))
+                    ){
+                        File::permission($object, [
+                            'dir' => $object->config('project.dir.source'),
+                        ]);
                     }
                 } else {
                     echo 'Skipping ' . $package . ' installation...' . PHP_EOL;
