@@ -1,6 +1,6 @@
 <?php
 
-namespace Package\R3m\Io\Installation\Controller;
+namespace Package\R3m\Io\Boot\Controller;
 
 use R3m\Io\App;
 use R3m\Io\Config;
@@ -22,31 +22,30 @@ class Cli extends Controller {
     const DIR = __DIR__ . '/';
     const MODULE_INFO = 'Info';
     const INFO = [
-        '{{binary()}} r3m_io/installation            | installation options',
-        '{{binary()}} r3m_io/installation setup      | installation setup',
-        '{{binary()}} r3m_io/installation update     | installation update',
+        '{{binary()}} r3m_io/boot                    | boot options',
+        '{{binary()}} r3m_io/boot setup              | boot setup',
+        '{{binary()}} r3m_io/boot update             | boot update',
     ];
 
     /**
      * @throws ObjectException
      * @throws Exception
      */
-    public static function run(App $object){
-        $autoload = [];
-        $data = new Data();
-        $data->set('prefix', 'Node');
-        $data->set('directory', $object->config('project.dir.node'));
-        $autoload[] = clone $data->data();
-        $data->clear();
-        $data->set('autoload', $autoload);
-        Cli::autoload($object, $data);
+    public static function run(App $object): mixed
+    {
         $node = $object->request(0);
         $scan = Cli::scan($object);
-        $module = $object->parameter($object, $node, 1);
-        if(!in_array($module, $scan['module'])){
+        $module = (string) $object->parameter($object, $node, 1);
+        if(
+            !in_array(
+                $module,
+                $scan['module'],
+                true
+            )
+        ){
             $module = Cli::MODULE_INFO;
         }
-        $submodule = $object->parameter($object, $node, 2);
+        $submodule = (string) $object->parameter($object, $node, 2);
         if(
             !in_array(
                 $submodule,
@@ -56,7 +55,7 @@ class Cli extends Controller {
         ){
             $submodule = false;
         }
-        $command = $object->parameter($object, $node, 3);
+        $command = (string) $object->parameter($object, $node, 3);
         if(
             !in_array(
                 $command,
@@ -68,7 +67,7 @@ class Cli extends Controller {
         ){
             $command = false;
         }
-        $subcommand = $object->parameter($object, $node, 4);
+        $subcommand = (string) $object->parameter($object, $node, 4);
         if(
             !in_array(
                 $subcommand,
@@ -77,11 +76,11 @@ class Cli extends Controller {
             ) ||
             $module === Cli::MODULE_INFO ||
             $submodule === Cli::MODULE_INFO ||
-            $command === CLI::MODULE_INFO
+            $command === Cli::MODULE_INFO
         ){
             $subcommand = false;
         }
-        $action = $object->parameter($object, $node, 5);
+        $action = (string) $object->parameter($object, $node, 5);
         if(
             !in_array(
                 $action,
@@ -90,12 +89,12 @@ class Cli extends Controller {
             ) ||
             $module === Cli::MODULE_INFO ||
             $submodule === Cli::MODULE_INFO ||
-            $command === CLI::MODULE_INFO ||
-            $subcommand === CLI::MODULE_INFO
+            $command === Cli::MODULE_INFO ||
+            $subcommand === Cli::MODULE_INFO
         ){
             $action = false;
         }
-        $subaction = $object->parameter($object, $node, 6);
+        $subaction = (string) $object->parameter($object, $node, 6);
         if(
             !in_array(
                 $subaction,
@@ -104,9 +103,9 @@ class Cli extends Controller {
             ) ||
             $module === Cli::MODULE_INFO ||
             $submodule === Cli::MODULE_INFO ||
-            $command === CLI::MODULE_INFO ||
-            $subcommand === CLI::MODULE_INFO ||
-            $action === CLI::MODULE_INFO
+            $command === Cli::MODULE_INFO ||
+            $subcommand === Cli::MODULE_INFO ||
+            $action === Cli::MODULE_INFO
         ){
             $subaction = false;
         }
@@ -217,6 +216,9 @@ class Cli extends Controller {
         }
     }
 
+    /**
+     * @throws Exception
+     */
     private static function scan(App $object): array
     {
         $scan = [
@@ -231,7 +233,7 @@ class Cli extends Controller {
         if(!Dir::exist($url)){
             return $scan;
         }
-         $dir = new Dir();
+        $dir = new Dir();
         $read = $dir->read($url, true);
         if(!$read){
             return $scan;
@@ -283,7 +285,7 @@ class Cli extends Controller {
             }
             if(array_key_exists(4, $explode) && $action === false){
                 $action = strtolower(File::basename($explode[4], $object->config('extension.tpl')));
-                $temp = explode('.', $subcommand, 2);
+                $temp = explode('.', $action, 2);
                 if(array_key_exists(1, $temp)){
                     $action = $temp[0];
                     $subaction = $temp[1];

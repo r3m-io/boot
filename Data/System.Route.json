@@ -3,9 +3,9 @@
     "Route": [
       {
         "#class": "System.Route",
-        "name": "r3m-io-cli-installation",
-        "path": "r3m_io\/installation",
-        "controller": "Package:R3m:Io:Installation:Controller:Cli:run",
+        "name": "r3m-io-cli-boot",
+        "path": "r3m_io\/boot",
+        "controller": "Package:R3m:Io:Boot:Controller:Cli:run",
         "priority": 1001,
         "request": {
           "language": "en"

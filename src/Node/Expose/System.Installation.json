@@ -29,6 +29,20 @@
                     }
                 ]
             },
+            "create_many": {
+                "expose": [
+                    {
+                        "role": "ROLE_SYSTEM",
+                        "property": [
+                            "uuid",
+                            "#class",
+                            "name",
+                            "mtime",
+                            "ctime"
+                        ]
+                    }
+                ]
+            },
             "list": {
                 "expose": [
                     {
@@ -71,7 +85,35 @@
                     }
                 ]
             },
+            "patch_many": {
+                "expose": [
+                    {
+                        "role": "ROLE_SYSTEM",
+                        "property": [
+                            "uuid",
+                            "#class",
+                            "name",
+                            "mtime",
+                            "ctime"
+                        ]
+                    }
+                ]
+            },
             "put": {
+                "expose": [
+                    {
+                        "role": "ROLE_SYSTEM",
+                        "property": [
+                            "uuid",
+                            "#class",
+                            "name",
+                            "mtime",
+                            "ctime"
+                        ]
+                    }
+                ]
+            },
+            "put_many": {
                 "expose": [
                     {
                         "role": "ROLE_SYSTEM",
