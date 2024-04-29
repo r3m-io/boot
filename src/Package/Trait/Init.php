@@ -67,6 +67,7 @@ trait Init {
                     }
                 }
                 if(property_exists($options, 'force')){
+                    Core::interactive();
                     $command = Core::binary($object) . ' install ' . $package;
                     if(!empty($command_options)){
                         $command = $command . ' ' . implode(' ', $command_options);
@@ -81,6 +82,7 @@ trait Init {
                     $is_install = true;
                 }
                 elseif(!$response){
+                    Core::interactive();
                     $command = Core::binary($object) . ' install ' . $package;
                     if(!empty($command_options)){
                         $command = $command . ' ' . implode(' ', $command_options);
