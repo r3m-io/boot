@@ -9,11 +9,11 @@
             },
             {
                 "name": "ctime",
-                "type": "int"
+                "type": "integer"
             },
             {
                 "name": "mtime",
-                "type": "int"
+                "type": "integer"
             }
         ]
     },
