@@ -29,7 +29,7 @@
             },
             {
                 "name": "priority",
-                "type": "int"
+                "type": "integer"
             },
             {
                 "name": "method",
