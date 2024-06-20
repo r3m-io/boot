@@ -49,23 +49,7 @@ trait Init {
                     $node->role_system(),
                     $record_options
                 );
-                $command_options = [];
-                foreach($options as $option => $value){
-                    if($value === false){
-                        $command_options[] = '-' . $option . '=false';
-                    }
-                    elseif($value === true){
-                        $command_options[] = '-' . $option . '=true';
-                    }
-                    elseif($value === null){
-                        $command_options[] = '-' . $option . '=null';
-                    }
-                    elseif(is_numeric($value)){
-                        $command_options[] = '-' . $option . '=' . $value;
-                    } else {
-                        $command_options[] = '-' . $option . '=\'' . $value . '\'';
-                    }
-                }
+                $command_options = App::options($object, 'command');
                 if(property_exists($options, 'force')){
                     $command = Core::binary($object) . ' install ' . $package;
                     if(!empty($command_options)){
