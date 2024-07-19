@@ -6,4 +6,4 @@ Module: {{$request.module|uppercase.first}}
 Submodule: {{$request.submodule|uppercase.first}}
 {{/if}}
 
-OutputFilter
+{{binary()}} r3m_io/boot setup
