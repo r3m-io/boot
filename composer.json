@@ -1,7 +1,7 @@
 {
     "name" : "r3m_io/boot",
     "description" : "r3m_io/boot see https://r3m.io for detailed usage",
-    "type" : "library",
+    "type" : "package",
     "keywords" : ["node", "r3m", "library", "framework", "boot", "r3m.io"],
     "homepage": "https://r3m.io",
     "require" : {
